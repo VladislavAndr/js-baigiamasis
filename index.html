@@ -5,10 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  
+  <header>
+    <h1>Your coffee log.</h1>
+  </header>
+
+  <main>
+    <form>
+      <label for="method">Choose a method</label>
+      <select type="select" name="method" id="method">
+        <option value="Aeropress">Aeropress</option>
+        <option value="French press">French press</option>
+        <option value="Moka pot">Moka pot</option>
+        <option value="V60">V60</option>
+        <option value="Chemex">Chemex</option>
+        <option value="Siphon">Siphon</option>
+      </select>
+      <label for="country">Country</label>
+      <input type="text" name="country" id="country">
+      <label for="region">Region</label>
+      <input type="text" name="region" id="region">
+      <label for="coffee-amount">Coffee amount (g) </label>
+      <input type="number" name="coffee-amount" id="coffee-amount">
+      <label for="water-amount">Water amount (g)</label>
+      <input type="number" name="water-amount" id="water-amount">
+      <label for="temp">Temperature (C)</label>
+      <input type="number" name="temp" id="temp">
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="cards"></div>
+  </main>
+  <footer>
+
+  </footer>
 </body>
 </html>

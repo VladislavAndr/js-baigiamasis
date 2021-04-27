@@ -1,0 +1,25 @@
+header{
+  width: 80%;
+  margin: 0 auto;  
+  text-align: center;
+}
+
+main{
+  width: 80%;
+  margin: 0 auto;
+}
+main form{
+  text-align: center;
+}
+main form input, main form select, main form button, main form label{
+display: block;
+margin: 0 auto;
+width: 50%;
+border: 1px solid black;
+padding: 0;
+box-sizing: border-box;
+}
+
+select option{
+  font-size: 2em;
+}
