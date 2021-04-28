@@ -1,102 +1,130 @@
-body{
-  background-color: rgb(205, 205, 205);
+body {
+	width: calc(100vw - (100vw - 100%));
+	background-color: #f1efec;
+	font-family: "Roboto Mono", monospace;
 }
 
-header{
-  width: 100%;
-  margin: 0 auto;  
-  text-align: center;
-  background-color: #634832;
-  margin-bottom: 50px;
-  padding: 10px;
+header {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #967259;
+	margin-bottom: 50px;
+	padding: 10px;
 }
-header h1{
-  margin: 0;
-  color: white;
+header h1 {
+	margin: 0;
+	color: white;
 }
 
 /* form */
 
-main{
-  width: 80%;
-  margin: 0 auto;
+main {
+	width: 80%;
+	margin: 0 auto;
 }
 
-main form{
-  text-align: center;
-  background-color: beige;
+main form {
+	padding: 50px;
+}
+
+input,
+select {
+  width: 100%;
+  margin-top: 5px;
+	margin-bottom:10px;
+	padding: 0;
+	box-sizing: border-box;
+	padding: 10px;
+	border: none;
+	border-radius: 10px;
+	background-color: white;
+  outline: none;
+}
+
+main form button {
+	background-color: #967259;
+	color: white;
+  padding: 8px 32px;
   border-radius: 10px;
-  padding: 50px;
-  
-}
-main form input, main form select, main form button{
-display: block;
-margin: 10px auto;
-width: 100%;
-padding: 0;
-box-sizing: border-box;
-padding: 5px 0 5px 10px;
-border: none;
-border-radius: 10px;
-background-color: white;
-}
-
-main form button{
-  background-color:#634832;
-  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 /* Card */
 
-#cards{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+#cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
-.card{
-  position: relative;
-  box-sizing: border-box;
-  width: calc(50% - 25px);
-  background-color: white;
-  margin-top: 50px;
-  border-radius: 10px;
-  padding: 25px;
-  transition: all 1s ease-in-out;
-}
-
-.card p{
-  margin: 5px;
+.card {
+	position: relative;
+	box-sizing: border-box;
+	width: calc(50% - 25px);
+	background-color: white;
+	margin-bottom: 50px;
+	border-radius: 10px;
+	padding: 25px;
+  box-shadow: rgba(112, 106, 96, 0.2) 0px 7px 29px 0px;
 }
 
-.image{
-  display: block;
-  width: 50px;
-  margin: 0 auto;
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.method{
-  display: block;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 600;
+.card p {
+	margin-bottom: 5px;
 }
 
-.country, .region{
-  display: inline-block;
-  width: calc(50% - 10px);
-  text-align: center;
-  font-size: 1.1em;
+.image {
+	display: block;
+	width: 50px;
+	margin: 0 auto;
 }
 
-.delete{
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.method {
+	display: block;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 600;
+}
+
+.country,
+.region {
+	font-size: 1.1em;
+	font-weight: 600;
+}
+
+.delete {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: rgb(107, 106, 106);
+}
+
+.delete:hover {
+	cursor: pointer;
   color: red;
 }
 
-.delete:hover{
-  cursor: pointer;
+/* sort / search */
+
+.sort-search {
+	padding: 50px 0;
+	display: flex;
+	justify-content: space-between;
 }
 
+.error-message {
+	text-align: left;
+	margin: 0;
+	color: red;
+}
 
+footer {
+	text-align: center;
+	background-color: #967259;
+	padding: 5px 0;
+	color: white;
+}

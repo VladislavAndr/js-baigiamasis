@@ -1,55 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header>
-    <h1>Your coffee log.</h1>
-  </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+			integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+			crossorigin="anonymous"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js" defer></script>
+		<script src="countries.json" defer></script>
+	</head>
+	<body>
+		<header>
+			<h1>Your coffee log.</h1>
+		</header>
 
-  <main>
-    <form>
-      <select type="select" name="method" id="method">
-        <option value="choose">Choose a method</option>
-        <option value="Aeropress">Aeropress</option>
-        <option value="French Press">French press</option>
-        <option value="Moka Pot">Moka pot</option>
-        <option value="V60">V60</option>
-        <option value="Chemex">Chemex</option>
-        <option value="Siphon">Siphon</option>
-      </select>
-      <input type="text" name="country" id="country" placeholder="Country">
-      <input type="text" name="region" id="region" placeholder="Region">
-      <input type="number" name="coffee-amount" id="coffee-amount" placeholder="Coffee amount ( grams )">
-      <input type="number" name="water-amount" id="water-amount" placeholder="Water amount ( grams )">
-      <input type="number" name="temp" id="temp" placeholder="Temperature ( Celsius )">
-      <input type="number" name="time" id="time" placeholder="Brew time ( minutes )">
-      <button type="submit">Submit</button>
-    </form>
-    <label for="sort">Sort by method</label>
-    <select name="sort-method" id="sort-method" type="submit" class="sort-method">
-      <option value="choose">All methods</option>
-        <option value="Aeropress">Aeropress</option>
-        <option value="French Press">French press</option>
-        <option value="Moka Pot">Moka pot</option>
-        <option value="V60">V60</option>
-        <option value="Chemex">Chemex</option>
-        <option value="Siphon">Siphon</option>
-    </select>
-    <label for="search">Search</label>
-    <input type="search" name="search" id="search">
-    <div id="cards"></div>
-  </main>
-  <footer>
+		<main>
+			<form name="add">
+				<select type="select" name="method" id="method">
+					<option value="choose">Choose a method</option>
+					<option value="Aeropress">Aeropress</option>
+					<option value="French Press">French press</option>
+					<option value="Moka Pot">Moka pot</option>
+					<option value="V60">V60</option>
+					<option value="Chemex">Chemex</option>
+					<option value="Siphon">Siphon</option>
+				</select>
+				<p class="error-message" id="method-error"></p>
+				<input type="text" name="country" id="country" placeholder="Country" />
+				<input type="text" name="region" id="region" placeholder="Region" />
+				<input
+					type="number"
+					step="any"
+					name="coffee-amount"
+					id="coffee-amount"
+					placeholder="Coffee amount ( grams )"
+				/>
+				<input
+					type="number"
+					step="any"
+					name="water-amount"
+					id="water-amount"
+					placeholder="Water amount ( grams )"
+				/>
+				<input
+					type="number"
+					step="any"
+					name="temp"
+					id="temp"
+					placeholder="Temperature ( Celsius )"
+				/>
+				<input
+					type="number"
+					step="any"
+					name="time"
+					id="time"
+					placeholder="Brew time ( minutes )"
+				/>
+				<button type="submit">Submit</button>
+			</form>
+			<div class="sort-search">
+				<div class="sort">
+					<label for="sort-method">Sort by method</label>
+					<select
+						name="sort-method"
+						id="sort-method"
+						type="submit"
+						class="sort-method"
+					>
+						<option value="choose">All methods</option>
+						<option value="Aeropress">Aeropress</option>
+						<option value="French Press">French press</option>
+						<option value="Moka Pot">Moka pot</option>
+						<option value="V60">V60</option>
+						<option value="Chemex">Chemex</option>
+						<option value="Siphon">Siphon</option>
+					</select>
+				</div>
+				<div class="search">
+					<label for="search-country">Search by country</label>
+					<input
+						type="search"
+						name="search-country"
+						id="search-country"
+						placeholder="i.e. Honduras"
+					/>
+				</div>
+			</div>
 
-  </footer>
-</body>
+			<div id="cards"></div>
+		</main>
+		<footer>
+			By Vladislav. Take care
+		</footer>
+	</body>
 </html>
