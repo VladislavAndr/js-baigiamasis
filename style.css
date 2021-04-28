@@ -1,25 +1,102 @@
+body{
+  background-color: rgb(205, 205, 205);
+}
+
 header{
-  width: 80%;
+  width: 100%;
   margin: 0 auto;  
   text-align: center;
+  background-color: #634832;
+  margin-bottom: 50px;
+  padding: 10px;
 }
+header h1{
+  margin: 0;
+  color: white;
+}
+
+/* form */
 
 main{
   width: 80%;
   margin: 0 auto;
 }
+
 main form{
   text-align: center;
+  background-color: beige;
+  border-radius: 10px;
+  padding: 50px;
+  
 }
-main form input, main form select, main form button, main form label{
+main form input, main form select, main form button{
 display: block;
-margin: 0 auto;
-width: 50%;
-border: 1px solid black;
+margin: 10px auto;
+width: 100%;
 padding: 0;
 box-sizing: border-box;
+padding: 5px 0 5px 10px;
+border: none;
+border-radius: 10px;
+background-color: white;
 }
 
-select option{
-  font-size: 2em;
+main form button{
+  background-color:#634832;
+  color: white;
 }
+
+/* Card */
+
+#cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card{
+  position: relative;
+  box-sizing: border-box;
+  width: calc(50% - 25px);
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 25px;
+  transition: all 1s ease-in-out;
+}
+
+.card p{
+  margin: 5px;
+}
+
+.image{
+  display: block;
+  width: 50px;
+  margin: 0 auto;
+}
+
+.method{
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.country, .region{
+  display: inline-block;
+  width: calc(50% - 10px);
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.delete{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+}
+
+.delete:hover{
+  cursor: pointer;
+}
+
+
